@@ -4,7 +4,7 @@ function createCounter1() {
     let counter = -1;
     return {
       get count() {
-        counter += 1;
+        counter += 1; 
         return counter;
       }
     }
