@@ -25,4 +25,15 @@ let curried = curryWithoutArrowFun(sum)
 let curried1 = curried(1)
 let curried2 = curried1(2)
 let curried3 = curried2(4)
-console.log(curried3)
+//--------------
+
+const curriedJoin = curry(join)
+
+curriedJoin(1, 2, 3) // '1_2_3'
+
+curriedJoin(1)(2, 3) // '1_2_3'
+
+curriedJoin(1, 2)(3) // '1_2_3'
+
+
+console.log(curriedJoin(1, 2, 3))
