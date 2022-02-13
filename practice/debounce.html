@@ -1,0 +1,38 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+   
+   
+
+
+</head>
+<body>
+
+    <button id="submit">Click ME!!!!</button>
+
+    <script>
+
+        function debounce(func, delay){
+            let timeoutId;
+            return function(...args){
+                if(timeoutId) clearTimeout(timeoutId)
+                timeoutId = setTimeout(() => {
+                    func(...args)
+                }, delay)
+            }
+        }
+        // click event is wrapped with debounce function, will be wait for 2ms before calling the submit function
+        document.getElementById('submit').addEventListener(
+            'click',
+            debounce(e => {
+                console.log('im clicked!!')
+            }, 2000)
+        )
+
+    </script>
+</body>
+</html>
