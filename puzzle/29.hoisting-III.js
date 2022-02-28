@@ -37,8 +37,23 @@ func()
 
 console.log(a) // global scope value of a is 1
 
-if (!('b' in window)) { // during execution b will not be in window 
-  var b = 1  // b is hoisted with value undefined
+if (!('b' in window)) { // during execution b will be on window and if condition is false
+  var b = 1  // var is not block scope, so b is hoisted with value undefined
 }
  
 console.log(b)  // undefined
+
+
+
+//TODO-QUESTION
+if (!('b' in window)) { 
+  var b = 1  // why is b hosited in global and made undefined here, since its a block scope
+}
+
+
+function sum(){
+  var aa = 10
+  var bb = 1000
+  return aa+bb 
+}
+
