@@ -14,7 +14,7 @@
   await Promise.all([1,2,Promise.resolve(3), Promise.reject('error')]).then((value) => {
     console.log(value)
   }, (error) => {
-    console.log(error) //returns "error" because of Promise.reject('error'); the other 3 resolved values are ignored.
+    console.log(error)
  
   })
 })()
@@ -22,5 +22,6 @@
 /**
  []
  [1, 2, 3, 4]
- Error
+ "error"      => when one of the promise is rejected, all promised is rejected, 
+                  and catch blocked will be executed, with first promise error
  */
