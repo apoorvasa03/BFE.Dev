@@ -1,3 +1,13 @@
+/** currying:
+ * currying is a process with which we can transform function with multiple parameter into sequence of nested function.
+ * it returns the few funtions which expects next argument
+ * 
+ * Advantage of currying: the main benifit of currying is when you use the same call with some of the same parameters a lot.
+ * ie. it helps us avoid passing same parameter again and again
+ * 
+ * best source: https://medium.com/dailyjs/why-the-fudge-should-i-use-currying-84e4000c8743
+ */
+
 function curryWithoutArrowFun (func){
     return function curried(...args){
         if(args.length >= func.length){
