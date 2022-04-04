@@ -5,6 +5,10 @@ its a programming practice used to ensure that time-consuming tasks do not fire 
 
 * its a higher order function
 
+* A debounce is utilized when you only care about the final state
+
+* For example, waiting until a user stops typing to fetch typeahead search results
+
 * source : https://www.youtube.com/watch?v=B1P3GFa7jVc (techsith)
 */
 
