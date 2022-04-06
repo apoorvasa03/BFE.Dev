@@ -1,3 +1,5 @@
+/** time: o(n)  space: o(n)*/
+/**------------type 1------------- */
 function flat(arr, depth = 1){
     let result = []
     for(let element of arr){
@@ -9,6 +11,24 @@ function flat(arr, depth = 1){
     }
 
     return result
+}
+
+/**------------type 2------------- */
+
+function flatten(arr, depth = 1) {
+  let result = []
+
+  function flat(arr, depth){
+      for(let element of arr){
+          if(typeof element == 'object' && depth > 0){
+              flat(element)
+          }else{
+              result.push(element)
+          }
+      }
+  }
+  flat(arr, depth)
+  return result;
 }
 
 /** -------flaten the object ------ */
